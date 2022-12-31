@@ -4,6 +4,10 @@ let songindex=0;
 let audioElement= new Audio("songs/1.mp3");
 let masterPlay = document.getElementById('masterPlay');
 let gif=document.getElementById('gif');
+let myprogressBar=document.getElementById("myprogressBar");
+let previous=document.getElementById('previous');
+let next=document.getElementById('next');
+let songItems =document.getElementsByClassName('songitem');
 
 masterPlay.addEventListener('click',()=>{
     if(audioElement.paused || audioElement.currentTime<=0){
@@ -18,4 +22,24 @@ masterPlay.addEventListener('click',()=>{
         masterPlay.classList.add('fa-circle-play'); 
         gif.style.opacity=0;
     }
+})
+
+audioElement.addEventListener('timeupdate',()=>{
+     progress = parseInt((audioElement.currentTime/audioElement.duration)*100) ;
+    myprogressBar.value = progress;
+})
+
+myprogressBar.addEventListener('change',()=>{
+    audioElement.currentTime=myprogressBar.value * audioElement.duration/100;
+})
+
+previous.addEventListener('click',()=>{
+    if(songindex<=0){
+        songindex=0;
+    }
+    else{
+        songindex-=1;
+    }
+
+    // audioElement.src=
 })
