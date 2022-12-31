@@ -77,14 +77,14 @@ nav ul li{
 }
 
 .songitemContainer{
-    margin-top: 74px;
+    margin-top: 54px;
 }
 .songitem{
     height: 50px;
     display: flex;
     background-color: white;
     color: black;
-    width: 80%;
+    width: 90%;
     margin: 12px 0;
     justify-content: space-between;
     align-items: center;
