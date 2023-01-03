@@ -74,6 +74,7 @@ nav ul li{
 
 #myprogressBar{
     width: 80vh;
+    cursor: pointer;
 }
 
 .songitemContainer{
