@@ -79,14 +79,14 @@ Array.from(document.getElementsByClassName('songItemplay')).forEach((Element)=>{
 })
 
 next.addEventListener('click',()=>{
-    if(songIndex>=9){
-        songIndex = 0
+    if(songindex>=9){
+        songindex = 0
     }
     else{
-        songIndex += 1;
+        songindex += 1;
     }
-    audioElement.src = `songs/${songIndex+1}.mp3`;
-    masterSongName.innerText = songs[songIndex].songName;
+    audioElement.src = `songs/${songindex+1}.mp3`;
+    masterSongName.innerText = songs[songindex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
     masterPlay.classList.remove('fa-circle-play');
@@ -101,8 +101,8 @@ previous.addEventListener('click',()=>{
         songindex-=1;
     }
 
-    audioElement.src = `songs/${songIndex+1}.mp3`;
-    masterSongName.innerText = songs[songIndex].songName;
+    audioElement.src = `songs/${songindex+1}.mp3`;
+    masterSongName.innerText = songs[songindex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
     masterPlay.classList.remove('fa-circle-play');
