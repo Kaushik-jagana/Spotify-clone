@@ -67,8 +67,27 @@ myprogressBar.addEventListener('change',()=>{
 
 Array.from(document.getElementsByClassName('songItemplay')).forEach((Element)=>{
         Element.addEventListener('click',(e)=>{
-           console.log(e);
-           makeallplays();
+        //    console.log(e);
+        if(songindex===parseInt(e.target.id)){
+            if(audioElement.paused || audioElement.currentTime<=0){
+                audioElement.play();
+                masterPlay.classList.remove('fa-circle-play');
+                masterPlay.classList.add('fa-circle-pause');
+                document.getElementById(`${songindex}`).classList.remove('fa-circle-play');
+                document.getElementById(`${songindex}`).classList.add('fa-circle-pause');
+                gif.style.opacity=1;
+            }
+            else{
+                audioElement.pause();
+                masterPlay.classList.remove('fa-circle-pause');
+                masterPlay.classList.add('fa-circle-play');
+                document.getElementById(`${songindex}`).classList.add('fa-circle-play');
+                document.getElementById(`${songindex}`).classList.remove('fa-circle-pause'); 
+                gif.style.opacity=0;
+            }
+        }
+        else
+        {   makeallplays();
            songindex=parseInt(e.target.id);
            e.target.classList.add('fa-circle-pause');
            e.target.classList.remove('fa-circle-play');
@@ -78,7 +97,7 @@ Array.from(document.getElementsByClassName('songItemplay')).forEach((Element)=>{
            audioElement.play();
            gif.style.opacity=1;
            masterPlay.classList.remove('fa-circle-play');
-           masterPlay.classList.add('fa-circle-pause');
+           masterPlay.classList.add('fa-circle-pause');}
         })
 })
 
