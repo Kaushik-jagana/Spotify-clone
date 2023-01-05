@@ -35,12 +35,16 @@ masterPlay.addEventListener('click',()=>{
         audioElement.play();
         masterPlay.classList.remove('fa-circle-play');
         masterPlay.classList.add('fa-circle-pause');
+        document.getElementById(`${songindex}`).classList.remove('fa-circle-play');
+        document.getElementById(`${songindex}`).classList.add('fa-circle-pause');
         gif.style.opacity=1;
     }
     else{
         audioElement.pause();
         masterPlay.classList.remove('fa-circle-pause');
-        masterPlay.classList.add('fa-circle-play'); 
+        masterPlay.classList.add('fa-circle-play');
+        document.getElementById(`${songindex}`).classList.add('fa-circle-play');
+        document.getElementById(`${songindex}`).classList.remove('fa-circle-pause'); 
         gif.style.opacity=0;
     }
 })
