@@ -123,7 +123,6 @@ previous.addEventListener('click',()=>{
     else{
         songindex-=1;
     }
-
     audioElement.src = `songs/${songindex+1}.mp3`;
     masterSongName.innerText = songs[songindex].songName;
     audioElement.currentTime = 0;
